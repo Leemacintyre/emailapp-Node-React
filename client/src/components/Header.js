@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import Payments from "./Payments";
 
+// header component
 class Header extends Component {
   renderContent() {
     switch (this.props.auth) {
