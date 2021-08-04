@@ -18,14 +18,12 @@ module.exports = (app) => {
       title,
       subject,
       body,
-      recipients: recipients
-        .split(",")
-        .map((email) => ({ email: email.trim() })),
+      recipients: recipients.split(",").map((email) => ({ email })),
       _user: req.user.id,
       dateSent: Date.now(),
     });
 
-    // place to send an email!
+    //  place to send an email!
     const mailer = new Mailer(survey, surveyTemplate(survey));
 
     try {
